@@ -15,7 +15,7 @@ stored in the same volume.
 
 The recommended way to run this container is as follows:
 
-```shell
+```bash
 $ docker run -d --name murmur-server -v $HOME/docker/volume_data/murmur:/data \
     -p 64738:64738/tcp -p 64738:64738/udp mattikus/murmur
 ```
@@ -23,7 +23,7 @@ $ docker run -d --name murmur-server -v $HOME/docker/volume_data/murmur:/data \
 On first run, if you don't already have an existing state database, you'll want
 to look at the logs for your container to get the super-user password:
 
-```shell
+```bash
 docker logs murmur-server 2>&1 | grep Password
 <W>2014-07-27 01:41:31.256 1 => Password for 'SuperUser' set to '(mAq3hkwnkD'
 ```
