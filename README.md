@@ -24,6 +24,6 @@ On first run, if you don't already have an existing state database, you'll want
 to look at the logs for your container to get the super-user password:
 
 ```bash
-docker logs murmur-server 2>&1 | grep Password
+$ docker logs murmur-server 2>&1 | grep Password
 <W>2014-07-27 01:41:31.256 1 => Password for 'SuperUser' set to '(mAq3hkwnkD'
 ```
