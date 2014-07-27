@@ -7,9 +7,20 @@ compiled version of murmurd from the official website.
 
 It's configured to look for the configuration file in `/data/murmur.ini`.
 
-An example configuration file (`murmur.ini.example`) has been provided which
-will run the server with the defaults and allow for the server database to be
-stored in the same volume.
+## Barebones murmur.ini
+
+The basic `murmur.ini` sufficient to start up the server using the defaults and
+save your state to the volume. Make sure the volume you attach contains a
+config with at least this as the minimum. 
+
+```ini
+# Murmur configuration file.
+#
+
+# Path to database. If blank, will search for
+# murmur.sqlite in default locations or create it if not found.
+database=/data/murmur.sqlite
+```
 
 ## Usage
 
