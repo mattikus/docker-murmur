@@ -1,0 +1,7 @@
+# Murmur configuration file.
+#
+
+# Path to database. If blank, will search for
+# murmur.sqlite in default locations or create it if not found.
+database=/data/murmur.sqlite
+
