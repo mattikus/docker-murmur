@@ -7,9 +7,6 @@ RUN wget http://sourceforge.net/projects/mumble/files/Mumble/1.2.7/murmur-static
 # Read murmur.ini and murmur.sqlite from /data/
 VOLUME ["/data"]
 
-# Create location where we save our sqlite db
-RUN mkdir -p /data
-
 # Forward apporpriate ports
 EXPOSE 64738/tcp 64738/udp
 
