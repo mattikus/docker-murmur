@@ -1,7 +1,7 @@
 FROM busybox:latest
 MAINTAINER Matt Kemp <matt@mattikus.com>
 
-ENV version=1.2.11
+ENV version=1.2.12
 
 # Download statically compiled murmur and install it to /opt/murmur
 ADD https://github.com/mumble-voip/mumble/releases/download/${version}/murmur-static_x86-${version}.tar.bz2 /opt/
