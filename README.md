@@ -1,6 +1,6 @@
 ## Description
 
-This is a barebones docker container built using busybox and a statically compiled version of murmurd from the official website.
+This is a barebones docker container built using busybox and a statically compiled version of murmurd from the [official website](https://www.mumble.info).
 
 It's configured to look for the configuration file in `/etc/murmur.ini`.
 
