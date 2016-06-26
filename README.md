@@ -1,9 +1,6 @@
-# murmur
-
 ## Description
 
-This is a barebones docker container built using busybox and a statically
-compiled version of murmurd from the official website.
+This is a barebones docker container built using busybox and a statically compiled version of murmurd from the official website.
 
 It's configured to look for the configuration file in `/etc/murmur.ini`.
 
@@ -15,8 +12,7 @@ The recommended way to run this container is as follows:
 $ docker run -d -p 64738:64738 -p 64738:64738/udp mattikus/murmur
 ```
 
-To have the container store the sqlite database on your filesystem instead, you
-can run:
+To have the container store the sqlite database on your filesystem instead, you can run:
 
 ```bash
 $ docker run -d -p 64738:64738 -p 64738:64738/udp \
@@ -27,8 +23,7 @@ $ docker run -d -p 64738:64738 -p 64738:64738/udp \
 
 ### Getting the super-user password
 
-On first run, if you don't already have an existing state database, you'll want
-to look at the logs for your container to get the super-user password:
+On first run, if you don't already have an existing state database, you'll want to look at the logs for your container to get the super-user password: 
 
 ```bash
 $ docker logs murmur 2>&1 | grep Password
@@ -43,8 +38,7 @@ If you want to tweak the provided murmur.ini, you should run:
 docker cp your-container-name:/etc/murmur.ini /path/to/murmur.ini
 ```
 
-If you are using the built in volume at `/data/`, then you should sure your
-config contains:
+If you are using the built in volume at `/data/`, then you should sure your config contains:
 
 ```ini
 database=/data/murmur.sqlite
