@@ -1,5 +1,5 @@
-FROM busybox:latest
-MAINTAINER Matt Kemp <matt@mattikus.com>
+FROM busybox:latest AS builder
+LABEL MAINTAINER="Matt Kemp <matt@mattikus.com>"
 
 ENV version=1.3.3
 
@@ -10,6 +10,11 @@ RUN wget "https://github.com/mumble-voip/mumble/releases/download/${version}/mur
     bzcat murmurd.tar.bz2 | tar -x -f - && \
     rm murmurd.tar.bz2 && \
     mv murmur-static_x86-${version} /opt/murmur
+
+FROM busybox:latest
+
+# Grab murmurd from builder stage
+COPY --from=builder /opt/murmur /opt/murmur
 
 # Copy in our slightly tweaked INI which points to our volume
 COPY murmur.ini /etc/murmur.ini
