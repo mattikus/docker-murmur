@@ -1,7 +1,7 @@
 FROM busybox:latest AS builder
 LABEL MAINTAINER="Matt Kemp <matt@mattikus.com>"
 
-ENV version=1.3.3
+ENV version=1.3.4
 
 # Download statically compiled murmur and install it to /opt/murmur
 WORKDIR /opt
