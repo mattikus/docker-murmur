@@ -18,6 +18,7 @@ COPY --from=builder /opt/murmur /opt/murmur
 
 # Copy in our slightly tweaked INI which points to our volume
 COPY murmur.ini /etc/murmur.ini
+COPY entrypoint.sh /entrypoint.sh
 
 # Forward apporpriate ports
 EXPOSE 64738/tcp 64738/udp
@@ -26,5 +27,5 @@ EXPOSE 64738/tcp 64738/udp
 VOLUME ["/data"]
 
 # Run murmur
-ENTRYPOINT ["/opt/murmur/murmur.x86", "-fg", "-v"]
+ENTRYPOINT "/entrypoint.sh"
 CMD ["-ini", "/etc/murmur.ini"]
